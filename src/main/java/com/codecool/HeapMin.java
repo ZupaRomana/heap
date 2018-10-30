@@ -1,4 +1,4 @@
 package com.codecool;
 
-public class Heap {
+public class HeapMin {
 }
