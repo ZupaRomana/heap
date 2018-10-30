@@ -62,6 +62,16 @@ public class Node {
     }
 
     public void addChild(Node child) throws IllegalStateException {
+        if (hasTwoChildren()) {
+            throw new IllegalStateException();
+        } else if (hasLeft()){
+            setRight(child);
+        } else {
+            setLeft(child);
+        }
+    }
 
+    private boolean hasTwoChildren() {
+        return hasLeft() && hasRight();
     }
 }
