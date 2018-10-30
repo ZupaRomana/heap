@@ -74,4 +74,12 @@ public class Node {
     private boolean hasTwoChildren() {
         return hasLeft() && hasRight();
     }
+
+    public void swap(Node node) throws IllegalArgumentException {
+        if (node == null) {
+            throw new IllegalArgumentException();
+        } else {
+
+        }
+    }
 }
