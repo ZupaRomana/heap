@@ -17,12 +17,16 @@ public class HeapMin {
     public void add(int i) {
     }
 
-    public Node getRoot() throws NoSuchElementException {
+    private Node getRoot() throws NoSuchElementException {
         if (root == null) {
             throw new NoSuchElementException();
         } else {
             return root;
         }
+    }
+
+    public int getRootValue() {
+        return getRoot().getValue();
     }
 
     public void setRoot(Node root) {
