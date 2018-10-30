@@ -15,6 +15,7 @@ public class HeapMin {
     }
 
     public void add(int i) {
+        setRoot(new Node(i, null));
     }
 
     private Node getRoot() throws NoSuchElementException {
