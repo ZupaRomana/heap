@@ -43,4 +43,9 @@ public class Node {
     public void setRight(Node right) {
         this.right = right;
     }
+
+    // Wont work with generics
+    public Node[] getSiblingNodes() {
+        return new Node[]{this.left, this.right};
+    }
 }
