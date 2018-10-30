@@ -38,4 +38,15 @@ class HeapMinTest {
         assertEquals(expected, actual);
     }
 
+    @Test
+    void returnsValidRoot_when_moreElemsAddedFromMinToMax() {
+        heap.add(3);
+        heap.add(5);
+
+        int expected = 3;
+        int actual = heap.getRootValue();
+
+        assertEquals(expected, actual);
+    }
+
 }
