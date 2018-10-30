@@ -63,4 +63,15 @@ class NodeTest {
         });
     }
 
+    @Test
+    void haveRightValues_after_swap() {
+        Node target = new Node(100, null);
+        node.swap(target);
+
+        int expected = 100;
+        int actual = node.getValue();
+
+        assertEquals(expected, actual);
+    }
+
 }
