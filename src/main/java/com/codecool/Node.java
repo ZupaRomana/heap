@@ -50,14 +50,14 @@ public class Node {
     }
 
     public boolean isLeaf() {
-        return !(hasLeftChild() && hasRightChild());
+        return !(hasLeft() && hasRight());
     }
 
-    public boolean hasRightChild() {
+    public boolean hasRight() {
         return this.right != null;
     }
 
-    public boolean hasLeftChild() {
+    public boolean hasLeft() {
         return this.left != null;
     }
 }
