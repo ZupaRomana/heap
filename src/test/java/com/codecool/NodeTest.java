@@ -6,12 +6,12 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class NodeTest {
 
-    private Node node = new Node(5, null);
+    private Node node = createNode(5);
 
     @Test
     void returnsValidNodesWithValues_getSiblingNodesInvoked() {
-        Node left = new Node(3, node);
-        Node right = new Node(1, node);
+        Node left = createNode(3);
+        Node right = createNode(1);
         node.setLeft(left);
         node.setRight(right);
 
@@ -23,8 +23,8 @@ class NodeTest {
 
     @Test
     void throwsException_when_nodeHasMaxChildren_setChildInvoked() {
-        Node left = new Node(3, node);
-        Node right = new Node(1, node);
+        Node left = createNode(3);
+        Node right = createNode(1);
         node.addChild(left);
         node.addChild(right);
 
@@ -40,7 +40,7 @@ class NodeTest {
 
     @Test
     void returnsFalse_when_nodeHasOneChild() {
-        Node child = new Node(5, node);
+        Node child = createNode(5);
         node.addChild(child);
 
         assertFalse(node.isLeaf());
@@ -48,8 +48,8 @@ class NodeTest {
 
     @Test
     void returnsFalse_when_nodeHasManyChildren() {
-        Node left = new Node(3, node);
-        Node right = new Node(31, node);
+        Node left = createNode(3);
+        Node right = createNode(31);
         node.addChild(left);
         node.addChild(right);
 
@@ -65,13 +65,17 @@ class NodeTest {
 
     @Test
     void haveRightValues_after_swap() {
-        Node target = new Node(100, null);
+        Node target = createNode(100);
         node.swap(target);
 
         int expected = 100;
         int actual = node.getValue();
 
         assertEquals(expected, actual);
+    }
+
+    private Node createNode(int value) {
+        return new Node(value);
     }
 
 }
