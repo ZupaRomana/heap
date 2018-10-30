@@ -7,9 +7,8 @@ public class Node {
     private Node left;
     private Node right;
 
-    public Node(int value, Node parent) {
+    public Node(int value) {
         this.value = value;
-        this.parent = parent;
     }
 
     public int getValue() {
