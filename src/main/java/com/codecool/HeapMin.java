@@ -1,5 +1,7 @@
 package com.codecool;
 
+import java.util.NoSuchElementException;
+
 public class HeapMin {
 
     private Node root;
@@ -12,18 +14,15 @@ public class HeapMin {
         this.size = 0;
     }
 
-    public void initialize(int[] array) {
-        this.nodes = new Node[size];
-        for (int i : array) {
-            add(i);
-        }
-    }
-
     public void add(int i) {
     }
 
-    public Node getRoot() {
-        return root;
+    public Node getRoot() throws NoSuchElementException {
+        if (root.isEmpty()) {
+            throw new NoSuchElementException();
+        } else {
+            return root;
+        }
     }
 
     public void setRoot(Node root) {
