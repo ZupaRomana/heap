@@ -13,8 +13,18 @@ class HeapMinTest {
     @Test
     void throwsException_when_noElements_getRootInvoked() {
         assertThrows(NoSuchElementException.class, () -> {
-            heap.getRoot();
+            heap.getRootValue();
         });
+    }
+
+    @Test
+    void returnsValidRoot_when_addedOneElem() {
+        heap.add(5);
+
+        int expected = 5;
+        int actual = heap.getRootValue();
+
+        assertEquals(expected, actual);
     }
 
 }
