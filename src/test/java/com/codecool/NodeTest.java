@@ -22,6 +22,18 @@ class NodeTest {
     }
 
     @Test
+    void throwsException_when_nodeHasMaxChildren_setChildInvoked() {
+        Node left = new Node(3, node);
+        Node right = new Node(1, node);
+        node.setChild(left);
+        node.setChild(right);
+
+        assertThrows(IllegalStateException.class, () -> {
+            node.setChild(left);
+        });
+    }
+
+    @Test
     void returnsTrue_when_nodeHasNoChildren() {
         assertTrue(node.isLeaf());
     }
