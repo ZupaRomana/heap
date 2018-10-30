@@ -20,4 +20,11 @@ class NodeTest {
         assertArrayEquals(expected, actual);
     }
 
+    @Test
+    void returnsTrue_when_nodeHasNoChildren() {
+        Node node = new Node(3, null);
+
+        assertTrue(node.isLeaf());
+    }
+
 }
