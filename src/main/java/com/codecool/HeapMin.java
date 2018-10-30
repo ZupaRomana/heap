@@ -18,7 +18,7 @@ public class HeapMin {
     }
 
     public Node getRoot() throws NoSuchElementException {
-        if (root.isEmpty()) {
+        if (root == null) {
             throw new NoSuchElementException();
         } else {
             return root;
