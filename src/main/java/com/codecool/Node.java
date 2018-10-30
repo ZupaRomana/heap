@@ -60,4 +60,8 @@ public class Node {
     public boolean hasLeft() {
         return this.left != null;
     }
+
+    public void addChild(Node child) throws IllegalStateException {
+
+    }
 }

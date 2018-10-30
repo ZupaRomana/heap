@@ -25,11 +25,11 @@ class NodeTest {
     void throwsException_when_nodeHasMaxChildren_setChildInvoked() {
         Node left = new Node(3, node);
         Node right = new Node(1, node);
-        node.setChild(left);
-        node.setChild(right);
+        node.addChild(left);
+        node.addChild(right);
 
         assertThrows(IllegalStateException.class, () -> {
-            node.setChild(left);
+            node.addChild(left);
         });
     }
 
@@ -41,7 +41,7 @@ class NodeTest {
     @Test
     void returnsFalse_when_nodeHasOneChild() {
         Node child = new Node(5, node);
-        node.setChild(child);
+        node.addChild(child);
 
         assertFalse(node.isLeaf());
     }
@@ -50,8 +50,8 @@ class NodeTest {
     void returnsFalse_when_nodeHasManyChildren() {
         Node left = new Node(3, node);
         Node right = new Node(31, node);
-        node.setChild(left);
-        node.setChild(right);
+        node.addChild(left);
+        node.addChild(right);
 
         assertFalse(node.isLeaf());
     }
