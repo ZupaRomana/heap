@@ -74,12 +74,16 @@ public class Node {
     private boolean hasTwoChildren() {
         return hasLeft() && hasRight();
     }
-
+    /*
+    For now swap method will just swap the values of nodes
+     */
     public void swap(Node node) throws IllegalArgumentException {
         if (node == null) {
             throw new IllegalArgumentException();
         } else {
-
+            int value = getValue();
+            setValue(node.getValue());
+            node.setValue(value);
         }
     }
 }
