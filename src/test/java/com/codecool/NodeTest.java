@@ -29,6 +29,7 @@ class NodeTest {
     @Test
     void returnsFalse_when_nodeHasOneChild() {
         Node child = new Node(5, node);
+        node.setChild(child);
 
         assertFalse(node.isLeaf());
     }
