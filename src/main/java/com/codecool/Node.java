@@ -50,7 +50,7 @@ public class Node {
     }
 
     public boolean isLeaf() {
-        return !(hasLeft() && hasRight());
+        return !(hasLeft() || hasRight());
     }
 
     public boolean hasRight() {
