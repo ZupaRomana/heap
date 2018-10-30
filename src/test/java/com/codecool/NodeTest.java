@@ -34,4 +34,14 @@ class NodeTest {
         assertFalse(node.isLeaf());
     }
 
+    @Test
+    void returnsFalse_when_nodeHasManyChildren() {
+        Node left = new Node(3, node);
+        Node right = new Node(31, node);
+        node.setChild(left);
+        node.setChild(right);
+
+        assertFalse(node.isLeaf());
+    }
+
 }
