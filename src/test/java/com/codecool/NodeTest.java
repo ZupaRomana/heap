@@ -56,4 +56,11 @@ class NodeTest {
         assertFalse(node.isLeaf());
     }
 
+    @Test
+    void throwsException_when_AnyNodeIsNull_swapInvoked() {
+        assertThrows(IllegalArgumentException.class, () -> {
+            node.swap(null);
+        });
+    }
+
 }
