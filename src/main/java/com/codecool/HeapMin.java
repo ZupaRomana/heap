@@ -16,10 +16,10 @@ public class HeapMin {
 
     public void add(int value) {
         Node node = createNode(value);
-        addToNodes(node);
         if (root == null) {
             initializeRoot(node);
         }
+        addToNodes(node);
     }
 
     private void increaseSize() {
