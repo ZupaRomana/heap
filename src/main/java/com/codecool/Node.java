@@ -48,4 +48,16 @@ public class Node {
     public Node[] getSiblingNodes() {
         return new Node[]{this.left, this.right};
     }
+
+    public boolean isLeaf() {
+        return !(hasLeftChild() && hasRightChild());
+    }
+
+    public boolean hasRightChild() {
+        return this.right != null;
+    }
+
+    public boolean hasLeftChild() {
+        return this.left != null;
+    }
 }
